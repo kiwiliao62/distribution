@@ -4,15 +4,8 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
-on:
-  push:
-    branches:
-      - 'main'
-      - 'release/*'
-    tags:
-      - 'v*'
-  pull_request:
-
+on:  workflow_dispatch
+ 
 env:
   DOCKERHUB_SLUG: distribution/distribution
   GHCR_SLUG: ghcr.io/${{ github.repository }}
